@@ -13,11 +13,14 @@
 
         <div class="row">
             <div class="col">
-                <h6>Responda a questão:</h6>
-                <p>Métricas de software é ...</p>
+                <h6>{{ instrucao }}</h6>
+                <p>{{ questoes[0].pergunta }}</p>
 
                 <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea class="form-control"
+                     rows="3"
+                     (input)="atualizaResposta($event)"
+                     ></textarea>
                 </div>
             </div>
         </div>

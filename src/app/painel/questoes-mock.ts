@@ -1,6 +1,6 @@
 import { Questoes } from '../shared/questoes.model'
 
-const QUESTOES: Questoes[] =[
+export const QUESTOES: Questoes[] =[
     { pergunta: "Um ALI é uma entidade lógica e persistente, a respeito da qual dados serão mantidos "  , resposta: "Certo" },
     { pergunta: "Os ALIs baseiam-se em requisitos lógicos dos usuários e são dependentes da implementação ou meios de armazenamento, tais como tabelas ou bancos de dados "  , resposta: "Errado" },
     { pergunta: "Um AIE é uma entidade lógica e persistente que é requerida para referência ou validação pelo software que está em desenvolvimento, mas que é não mantido por outro aplicativo de software "  , resposta: "Errado" },
