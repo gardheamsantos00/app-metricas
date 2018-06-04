@@ -1,6 +1,6 @@
 <app-topo></app-topo>
 
-<div *ngIf="gamaEmAndamento ; else fimdeGame">
+<div *ngIf="gameEmAndamento ; else fimdeGame">
     <app-painel (encerrarGame)="encerrarGame($event)"></app-painel>
 </div>
 
@@ -13,6 +13,7 @@
                             <div class="d-flex justify-content-end">
                                 <button type="button" 
                                 class="btn btn-primary"
+                                (click)="reiniciarGame()"
                                 >Reiniciar</button>
                             </div>
                         </div>
@@ -28,10 +29,11 @@
                 <div class="jumbotron">
                     <div class="row">
                         <div class="col">
-                            <h1 style="color: blue"> Parabens, você ganhou ! </h1>
+                            <h1 style="color: green"> Parabens, você ganhou ! </h1>
                             <div class="d-flex justify-content-end">
                                 <button type="button" 
                                 class="btn btn-primary"
+                                (click)="reiniciarGame()"
                                 >Reiniciar</button>
                             </div>
                         </div>
