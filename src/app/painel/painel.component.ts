@@ -17,6 +17,7 @@ export class PainelComponent implements OnInit {
   public rodada: number = 0 
   public rodadaQuestao: Questoes
 
+  public progresso: number = 0
 
   constructor() { 
     this.rodadaQuestao = this.questoes[this.rodada]
@@ -30,14 +31,14 @@ export class PainelComponent implements OnInit {
 
  public atualizaResposta(resposta: Event): void{
     this.resposta = (<HTMLInputElement>resposta.target).value  
-    //console.log(this.resposta)
   }
 
  public verificarResposta(): void {
-    //console.log('verificado: ' + this.resposta)
     if(this.rodadaQuestao.resposta == this.resposta){
       this.rodada++
+      this.progresso = this.progresso + (100 / this.questoes.length)
       this.rodadaQuestao = this.questoes[this.rodada]
+      console.log(this.progresso)
       alert('resposta correta')
     }else{
       alert('resposta errada !')
