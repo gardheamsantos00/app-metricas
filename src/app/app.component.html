@@ -1,2 +1,9 @@
 <app-topo></app-topo>
-<app-painel (encerrarGame)="encerrarGame($event)"></app-painel>
+
+<div *ngIf="gamaEmAndamento">
+    <app-painel (encerrarGame)="encerrarGame($event)"></app-painel>
+</div>
+
+<div  class="jumbotron">
+    <h1>DERROTA !</h1>
+</div>
