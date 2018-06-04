@@ -8,10 +8,11 @@ import { Coracao } from '../shared/coracao.model'
 })
 export class TentativasComponent implements OnInit {
 
-  public coracaoVazio: string = '/assets/coracao_vazio.png'
   public coracaoCheio: string = '/assets/coracao_cheio.png'
+  public coracaoVazio: string = '/assets/coracao_vazio.png'
   
-  public coracao: Coracao[] = [
+  public coracoes: Coracao[] = [
+    new Coracao(true),
     new Coracao(true),
     new Coracao(true),
     new Coracao(true)

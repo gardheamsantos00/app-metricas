@@ -7,11 +7,11 @@ export class Coracao {
 
     ){}
 
-    public exibeCoracao(): any {
+    public exibeCoracao(): string {
         if(this.cheio){
-            this.urlCoracaoCheio
+            return this.urlCoracaoCheio
         }else{
-            this.urlCoracaoVazio
+            return this.urlCoracaoVazio
         }
     }
 }
