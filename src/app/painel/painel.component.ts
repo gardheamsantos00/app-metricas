@@ -13,21 +13,24 @@ export class PainelComponent implements OnInit {
   public questoes: Questoes[] = QUESTOES
   public instrucao: string = "Responda a questao com Certo ou Errado: "
 
-  public resposta: string
+  public resposta: string = ''
   public rodada: number = 0 
   public rodadaQuestao: Questoes
 
   public progresso: number = 0
 
   constructor() { 
-    this.rodadaQuestao = this.questoes[this.rodada]
-    console.log(this.rodadaQuestao)
+    this.atualizaRodada()
   }
 
   ngOnInit() {
     
 
   }
+
+ public atualizaRodada(): void{
+  this.rodadaQuestao = this.questoes[this.rodada]
+ } 
 
  public atualizaResposta(resposta: Event): void{
     this.resposta = (<HTMLInputElement>resposta.target).value  
@@ -37,8 +40,8 @@ export class PainelComponent implements OnInit {
     if(this.rodadaQuestao.resposta == this.resposta){
       this.rodada++
       this.progresso = this.progresso + (100 / this.questoes.length)
-      this.rodadaQuestao = this.questoes[this.rodada]
-      console.log(this.progresso)
+      this.atualizaRodada()
+      this.resposta= ''
       alert('resposta correta')
     }else{
       alert('resposta errada !')
