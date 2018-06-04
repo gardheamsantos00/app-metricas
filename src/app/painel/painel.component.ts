@@ -35,8 +35,13 @@ export class PainelComponent implements OnInit {
 
  public verificarResposta(): void {
     //console.log('verificado: ' + this.resposta)
-    this.rodada++
-    console.log(this.rodada)
-    this.rodadaQuestao = this.questoes[this.rodada]
+    if(this.rodadaQuestao.resposta == this.resposta){
+      this.rodada++
+      this.rodadaQuestao = this.questoes[this.rodada]
+      alert('resposta correta')
+    }else{
+      alert('resposta errada !')
+    }
+
  }
 }
